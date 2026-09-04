@@ -434,6 +434,8 @@ struct ContentView: View {
                             dropInteraction: vm.dropInteraction,
                             animation: vm.animation
                         )
+                    case .clipboard:
+                        ClipboardHistoryView()
                     }
                 }
                 .transition(

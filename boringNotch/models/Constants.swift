@@ -329,6 +329,12 @@ extension Defaults.Keys {
     static let expandedDragDetection = Key<Bool>("expandedDragDetection", default: true)
     static let reverseShelfOrdering = Key<Bool>("reverseShelfOrdering", default: false)
     
+    // MARK: Clipboard
+    static let clipboardHistoryEnabled = Key<Bool>("clipboardHistoryEnabled", default: true)
+    static let clipboardHistoryLimit = Key<Int>("clipboardHistoryLimit", default: 50)
+    static let clipboardCaptureImages = Key<Bool>("clipboardCaptureImages", default: true)
+    static let clipboardCloseNotchAfterCopy = Key<Bool>("clipboardCloseNotchAfterCopy", default: true)
+
     // MARK: Calendar
     static let calendarSelectionState = Key<CalendarSelectionState>("calendarSelectionState", default: .all)
     static let hideAllDayEvents = Key<Bool>("hideAllDayEvents", default: false)
