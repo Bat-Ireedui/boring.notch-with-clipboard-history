@@ -18,6 +18,23 @@
   </a>
 </p>
 
+> [!NOTE]
+> ## 📋 This fork adds Clipboard History
+> **Added by [@Bat-Ireedui](https://github.com/Bat-Ireedui).** This is a fork of [TheBoredTeam/boring.notch](https://github.com/TheBoredTeam/boring.notch) with one new feature: a **Clipboard** tab inside the notch.
+>
+> - Everything you copy (text, code, links, images, files) shows up as a card in the notch.
+> - Click a card to copy it back, then paste with <kbd>⌘V</kbd>. Hover to pin or delete. Filter by type.
+> - Press <kbd>⇧⌘C</kbd> to open the clipboard tab from anywhere.
+> - Configure it under **Settings › Clipboard**. Content from password managers is never recorded.
+>
+> Full details, privacy notes and the list of changed files: [docs/clipboard-history.md](docs/clipboard-history.md)
+
+<p align="center">
+  <img src="docs/clipboard-history.png" alt="Clipboard history tab in the notch" width="700" />
+</p>
+
+---
+
 <!--Welcome to **Boring.Notch**, the coolest way to make your MacBook's notch the star of the show! Forget about those boring status bars—our notch turns into a dynamic music control center, complete with a snazzy visualizer and all the music controls you need. It's like having a mini concert right at the top of your screen! -->
 
 Say hello to **Boring Notch**, the coolest way to make your MacBook’s notch the star of the show! Say goodbye to boring status bars: with Boring Notch, your notch transforms into a dynamic music control center, complete with a vibrant visualizer and all the essential music controls you need. But that’s just the start! Boring Notch also offers calendar integration, a handy file shelf with AirDrop support, a complete MacOS HUD replacement and more!
