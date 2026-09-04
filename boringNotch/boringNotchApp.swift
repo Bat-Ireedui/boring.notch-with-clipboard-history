@@ -410,6 +410,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
+        KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
+            guard let self = self, Defaults[.clipboardHistoryEnabled] else { return }
+            Task { @MainActor [weak self] in
+                guard let self = self else { return }
+
+                var viewModel = self.vm
+                if Defaults[.showOnAllDisplays] {
+                    let mouseLocation = NSEvent.mouseLocation
+                    for screen in NSScreen.screens where screen.frame.contains(mouseLocation) {
+                        if let uuid = screen.displayUUID, let screenViewModel = self.viewModels[uuid] {
+                            viewModel = screenViewModel
+                            break
+                        }
+                    }
+                }
+
+                self.closeNotchTask?.cancel()
+                self.closeNotchTask = nil
+
+                if viewModel.notchState == .open && self.coordinator.currentView == .clipboard {
+                    viewModel.close()
+                } else {
+                    withAnimation(.smooth) {
+                        self.coordinator.currentView = .clipboard
+                    }
+                    if viewModel.notchState == .closed {
+                        viewModel.open()
+                    }
+                }
+            }
+        }
+
+        if Defaults[.clipboardHistoryEnabled] {
+            ClipboardManager.shared.start()
+        }
+
         if !Defaults[.showOnAllDisplays] {
             let viewModel = self.vm
             let window = createBoringNotchWindow(
